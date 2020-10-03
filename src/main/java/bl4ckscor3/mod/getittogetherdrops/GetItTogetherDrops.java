@@ -16,7 +16,7 @@ public class GetItTogetherDrops
 
 	public GetItTogetherDrops()
 	{
-		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Configuration.CONFIG_SPEC);
+		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Configuration.CONFIG_SPEC);
 	}
 
 	public static class Configuration
