@@ -20,7 +20,7 @@ public class GetItTogetherDrops
 	{
 		@Comment("The radius (in blocks) that dropped items should check around them for other dropped items to combine with. (\"0.5\" is vanilla behavior)")
 		@RangeDouble(min=0.5D, max=500.0D)
-		public static double radius = 1.0D;
+		public static double radius = 2.0D;
 
 		@Comment("Set to true if you want dropped items to also check above and below them, set to false if not (\"false\" is vanilla behavior)")
 		public static boolean checkY = true;
