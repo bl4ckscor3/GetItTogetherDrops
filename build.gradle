@@ -15,14 +15,14 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = "1.15.2-v1.0"
+version = "1.16.3-v1.0"
 group = "bl4ckscor3.mod.getittogetherdrops"
 archivesBaseName = "getittogetherdrops"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 minecraft {
-    mappings channel: "snapshot", version: "20201003-1.15.1"
+    mappings channel: "snapshot", version: "20200916-1.16.2"
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -54,14 +54,12 @@ minecraft {
 }
 
 repositories {
-    maven { url = 'https://dist.creeper.host/Sponge/maven' }
     jcenter()
     mavenCentral()
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.15.2-31.2.43"
-    compile 'org.spongepowered:mixin:0.8'
+    minecraft "net.minecraftforge:forge:1.16.3-34.1.5"
 }
 
 jar {

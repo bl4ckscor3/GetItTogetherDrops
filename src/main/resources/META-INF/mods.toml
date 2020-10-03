@@ -1,6 +1,7 @@
 modLoader="javafml"
-loaderVersion="[31,)"
+loaderVersion="[34,)"
 issueTrackerURL="http://github.com/bl4ckscor3/GetItTogetherDrops/issues"
+license="MIT License http://github.com/bl4ckscor3/GetItTogetherDrops/blob/1.16/LICENSE"
 
 [[mods]] 
 	modId="getittogetherdrops"
@@ -13,13 +14,13 @@ issueTrackerURL="http://github.com/bl4ckscor3/GetItTogetherDrops/issues"
 [[dependencies.getittogetherdrops]]
     modId="forge"
     mandatory=true
-    versionRange="[31,)"
+    versionRange="[34,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.getittogetherdrops]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15,1.16]"
+    versionRange="[1.16,1.17]"
     ordering="NONE"
     side="BOTH"
