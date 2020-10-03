@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "bl4ckscor3.mod.getittogetherdrops.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "getittogetherdrops.refmap.json",
+  "mixins": [
+  ],
+  "client":[
+    "ItemEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

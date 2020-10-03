@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+issueTrackerURL="http://github.com/bl4ckscor3/GetItTogetherDrops/issues"
+
+[[mods]] 
+	modId="getittogetherdrops"
+	version="v1.0"
+	displayName="Get It Together, Drops!"
+	displayURL="http://minecraft.curseforge.com/projects/get-it-together-drops"
+	authors="bl4ckscor3"
+	description='''Adds configuration options for defining how dropped items should combine.'''
+
+[[dependencies.getittogetherdrops]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.getittogetherdrops]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15,1.16]"
+    ordering="NONE"
+    side="BOTH"
