@@ -27,7 +27,7 @@ public class ItemEntityMixin
 				{
 					me.func_226530_a_(ei);
 
-					if(me.removed)
+					if(!me.isAlive())
 						break;
 				}
 			}
