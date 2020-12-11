@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDrops.Configuration;
+import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDropsConfig;
 import net.minecraft.entity.item.ItemEntity;
 
 @Mixin(ItemEntity.class)
@@ -18,8 +18,8 @@ public class ItemEntityMixin
 
 		if(me.func_213857_z())
 		{
-			double radius = Configuration.CONFIG.radius.get();
-			boolean checkY = Configuration.CONFIG.checkY.get();
+			double radius = GetItTogetherDropsConfig.radius;
+			boolean checkY = GetItTogetherDropsConfig.checkY;
 
 			for(ItemEntity ei : me.world.getEntitiesWithinAABB(ItemEntity.class, me.getBoundingBox().grow(radius, checkY ? radius : 0.0D, radius), e -> e != me && e.func_213857_z()))
 			{
@@ -27,7 +27,7 @@ public class ItemEntityMixin
 				{
 					me.func_226530_a_(ei);
 
-					if(me.removed)
+					if(!me.isAlive())
 						break;
 				}
 			}
