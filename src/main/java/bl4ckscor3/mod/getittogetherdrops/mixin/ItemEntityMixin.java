@@ -23,13 +23,10 @@ public class ItemEntityMixin
 
 			for(ItemEntity ei : me.world.getEntitiesWithinAABB(ItemEntity.class, me.getBoundingBox().grow(radius, checkY ? radius : 0.0D, radius), e -> e != me && e.func_213857_z()))
 			{
-				if(ei.func_213857_z())
-				{
-					me.func_226530_a_(ei);
+				me.func_226530_a_(ei);
 
-					if(!me.isAlive())
-						break;
-				}
+				if(!me.isAlive())
+					break;
 			}
 
 		}
