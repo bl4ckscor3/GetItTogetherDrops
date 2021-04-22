@@ -1,9 +1,9 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
+        maven { url = 'https://maven.minecraftforge.net' }
         jcenter()
         mavenCentral()
-        maven {url='https://dist.creeper.host/Sponge/maven'}
+        maven {url='https://repo.spongepowered.org/maven'}
 
     }
     dependencies {
@@ -53,12 +53,6 @@ minecraft {
     }
 }
 
-repositories {
-    maven { url = 'https://dist.creeper.host/Sponge/maven' }
-    jcenter()
-    mavenCentral()
-}
-
 dependencies {
     minecraft "net.minecraftforge:forge:1.15.2-31.2.44"
 }
@@ -66,12 +60,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title": "getittogetherdrops",
+                "Specification-Title": "Get It Together, Drops!",
                 "Specification-Vendor": "bl4ckscor3",
                 "Specification-Version": "v1.1",
                 "Implementation-Title": "Get It Together, Drops!",
                 "Implementation-Version": "v1.1",
-                "Implementation-Vendor": "getittogetherdrops",
+                "Implementation-Vendor": "bl4ckscor3",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs": "getittogetherdrops.mixins.json"
         ])
