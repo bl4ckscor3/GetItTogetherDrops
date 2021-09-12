@@ -16,14 +16,14 @@ public class ItemEntityMixin
 	{
 		ItemEntity me = (ItemEntity)(Object)this;
 
-		if(me.func_213857_z())
+		if(me.isMergable())
 		{
 			double radius = GetItTogetherDropsConfig.radius;
 			boolean checkY = GetItTogetherDropsConfig.checkY;
 
-			for(ItemEntity ei : me.world.getEntitiesWithinAABB(ItemEntity.class, me.getBoundingBox().grow(radius, checkY ? radius : 0.0D, radius), e -> e != me && e.func_213857_z()))
+			for(ItemEntity ei : me.level.getEntitiesOfClass(ItemEntity.class, me.getBoundingBox().inflate(radius, checkY ? radius : 0.0D, radius), e -> e != me && e.isMergable()))
 			{
-				me.func_226530_a_(ei);
+				me.tryToMerge(ei);
 
 				if(!me.isAlive())
 					break;
