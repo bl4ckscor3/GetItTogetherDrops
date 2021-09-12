@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDropsConfig;
-import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 
 @Mixin(ItemEntity.class)
 public class ItemEntityMixin
