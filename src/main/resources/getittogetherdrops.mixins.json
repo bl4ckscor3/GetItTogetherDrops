@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "bl4ckscor3.mod.getittogetherdrops.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_16",
   "refmap": "getittogetherdrops.refmap.json",
   "mixins": [
   ],

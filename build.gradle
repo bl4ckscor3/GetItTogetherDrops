@@ -12,9 +12,8 @@ buildscript {
 }
 
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'eclipse'
 
 version = "1.1"
 group = "bl4ckscor3.mod.getittogetherdrops"
@@ -57,6 +56,11 @@ minecraft {
 
 dependencies {
     minecraft "net.minecraftforge:forge:1.17.1-37.0.59"
+    annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
+}
+
+mixin {
+    add sourceSets.main, "getittogetherdrops.refmap.json"
 }
 
 jar {
@@ -72,8 +76,4 @@ jar {
                 "MixinConfigs": "getittogetherdrops.mixins.json"
         ])
     }
-}
-
-mixin {
-    add sourceSets.main, "getittogetherdrops.refmap.json"
 }
