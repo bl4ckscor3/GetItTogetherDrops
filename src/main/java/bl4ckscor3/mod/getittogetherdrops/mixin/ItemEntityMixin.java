@@ -11,8 +11,8 @@ import net.minecraft.world.entity.item.ItemEntity;
 @Mixin(ItemEntity.class)
 public class ItemEntityMixin
 {
-	@Inject(method="searchForOtherItemsNearby", at=@At("HEAD"), cancellable=true)
-	private void searchForOtherItemsNearby(CallbackInfo info)
+	@Inject(method="mergeWithNeighbours", at=@At("HEAD"), cancellable=true)
+	private void mergeWithNeighbours(CallbackInfo info)
 	{
 		ItemEntity me = (ItemEntity)(Object)this;
 
@@ -25,7 +25,7 @@ public class ItemEntityMixin
 			{
 				me.tryToMerge(ei);
 
-				if(!me.isAlive())
+				if(me.isRemoved())
 					break;
 			}
 
