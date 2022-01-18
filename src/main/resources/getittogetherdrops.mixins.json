@@ -5,7 +5,7 @@
   "refmap": "getittogetherdrops.refmap.json",
   "mixins": [
   ],
-  "client":[
+  "mixins": [
     "ItemEntityMixin"
   ],
   "injectors": {
