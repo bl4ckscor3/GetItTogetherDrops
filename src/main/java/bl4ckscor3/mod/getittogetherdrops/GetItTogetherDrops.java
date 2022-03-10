@@ -2,6 +2,10 @@ package bl4ckscor3.mod.getittogetherdrops;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import net.minecraft.item.Item;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.Tags.IOptionalNamedTag;
 import net.minecraftforge.fml.ExtensionPoint;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -12,6 +16,7 @@ import net.minecraftforge.fml.network.FMLNetworkConstants;
 public class GetItTogetherDrops
 {
 	public static final String MODID = "getittogetherdrops";
+	public static final IOptionalNamedTag<Item> IGNORED = ItemTags.createOptional(new ResourceLocation(MODID, "ignored"));
 
 	public GetItTogetherDrops()
 	{
