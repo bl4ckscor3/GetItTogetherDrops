@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[35,)"
+loaderVersion="[36,)"
 issueTrackerURL="http://github.com/bl4ckscor3/GetItTogetherDrops/issues"
 license="MIT License http://github.com/bl4ckscor3/GetItTogetherDrops/blob/1.16/LICENSE"
 
 [[mods]] 
 	modId="getittogetherdrops"
-	version="v1.1"
+	version="${version}"
 	displayName="Get It Together, Drops!"
 	displayURL="http://minecraft.curseforge.com/projects/get-it-together-drops"
 	authors="bl4ckscor3"
@@ -14,7 +14,7 @@ license="MIT License http://github.com/bl4ckscor3/GetItTogetherDrops/blob/1.16/L
 [[dependencies.getittogetherdrops]]
     modId="forge"
     mandatory=true
-    versionRange="[35,)"
+    versionRange="[36,)"
     ordering="NONE"
     side="BOTH"
 

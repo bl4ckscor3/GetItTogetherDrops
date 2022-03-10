@@ -1,28 +1,46 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-        jcenter()
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/maven' }
         mavenCentral()
-        maven {url='https://repo.spongepowered.org/maven'}
 
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7.+'
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 
 version = "1.16.4-v1.1.1"
 group = "bl4ckscor3.mod.getittogetherdrops"
 archivesBaseName = "getittogetherdrops"
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+
+processResources { 
+	duplicatesStrategy = 'include'
+ 
+	//replace ${version} in mods.toml
+	inputs.property 'version', project.version
+
+	from(sourceSets.main.resources.srcDirs) {
+		include 'META-INF/mods.toml'
+
+		expand 'version': project.version
+	}
+
+	from(sourceSets.main.resources.srcDirs) {
+		exclude 'META-INF/mods.toml'
+	}
+}
 
 minecraft {
-    mappings channel: "snapshot", version: "20210309-1.16.5"
+    mappings channel: 'official', version: '1.16.5'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -54,7 +72,7 @@ minecraft {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.16.5-36.1.2"
+    minecraft "net.minecraftforge:forge:1.16.5-36.2.30"
 }
 
 jar {
@@ -62,9 +80,9 @@ jar {
         attributes([
                 "Specification-Title": "Get It Together, Drops!",
                 "Specification-Vendor": "bl4ckscor3",
-                "Specification-Version": "v1.1",
+                "Specification-Version": "${version}",
                 "Implementation-Title": "Get It Together, Drops!",
-                "Implementation-Version": "v1.1",
+                "Implementation-Version": "${version}",
                 "Implementation-Vendor": "bl4ckscor3",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs": "getittogetherdrops.mixins.json"
