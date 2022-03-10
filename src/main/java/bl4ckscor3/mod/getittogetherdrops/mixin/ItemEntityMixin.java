@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDrops;
 import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDropsConfig;
 import net.minecraft.world.entity.item.ItemEntity;
 
@@ -16,7 +17,9 @@ public class ItemEntityMixin
 	{
 		ItemEntity me = (ItemEntity)(Object)this;
 
-		if(me.isMergable())
+		if(me.getItem().is(GetItTogetherDrops.IGNORED))
+			return;
+		else if(me.isMergable())
 		{
 			double radius = GetItTogetherDropsConfig.radius;
 			boolean checkY = GetItTogetherDropsConfig.checkY;

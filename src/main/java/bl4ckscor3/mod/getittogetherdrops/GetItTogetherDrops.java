@@ -1,5 +1,9 @@
 package bl4ckscor3.mod.getittogetherdrops;
 
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.fml.IExtensionPoint.DisplayTest;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -10,6 +14,7 @@ import net.minecraftforge.network.NetworkConstants;
 public class GetItTogetherDrops
 {
 	public static final String MODID = "getittogetherdrops";
+	public static final TagKey<Item> IGNORED = ItemTags.create(new ResourceLocation(MODID, "ignored"));
 
 	public GetItTogetherDrops()
 	{
