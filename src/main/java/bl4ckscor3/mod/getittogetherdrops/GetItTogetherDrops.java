@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid=GetItTogetherDrops.MODID, name="Get It Together, Drops!", version="1.0.1", serverSideOnly=true, acceptableRemoteVersions="*")
+@Mod(modid=GetItTogetherDrops.MODID, name="Get It Together, Drops!", version="1.0.2", acceptableRemoteVersions="*")
 @EventBusSubscriber(modid=GetItTogetherDrops.MODID)
 public class GetItTogetherDrops
 {
