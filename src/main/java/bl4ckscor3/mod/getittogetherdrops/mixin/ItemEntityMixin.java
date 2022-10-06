@@ -1,6 +1,5 @@
 package bl4ckscor3.mod.getittogetherdrops.mixin;
 
-import bl4ckscor3.mod.getittogetherdrops.ConfigHandler;
 import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDrops;
 import net.minecraft.world.entity.item.ItemEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,8 +22,8 @@ public abstract class ItemEntityMixin
 
 		if(invokeMe.callIsMergable())
 		{
-			double radius = ConfigHandler.radius();
-			boolean checkY = ConfigHandler.checkY();
+			double radius = GetItTogetherDrops.radius();
+			boolean checkY = GetItTogetherDrops.checkY();
 
 			for(ItemEntity ei : me.level.getEntitiesOfClass(ItemEntity.class, me.getBoundingBox().inflate(radius, checkY ? radius : 0.0D, radius), e -> e != me && ((ItemEntityInvoker)e).callIsMergable()))
 			{
