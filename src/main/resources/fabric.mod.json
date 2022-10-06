@@ -25,6 +25,7 @@
   ],
   "depends": {
     "minecraft": "~1.19",
-    "java": ">=17"
+    "java": ">=17",
+    "cloth-config": "*"
   }
 }
