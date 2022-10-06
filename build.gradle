@@ -1,82 +1,68 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-        maven {url='https://repo.spongepowered.org/maven'}
-        maven { url = 'https://maven.parchmentmc.org' }
-    }
-
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7.+'
-        classpath 'org.parchmentmc:librarian:1.+'
-    }
+plugins {
+	id 'fabric-loom' version '1.0-SNAPSHOT'
+	id 'maven-publish'
 }
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'eclipse'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
-version = "1.2"
-group = "bl4ckscor3.mod.getittogetherdrops"
-archivesBaseName = "getittogetherdrops-1.16"
+archivesBaseName = project.archives_base_name
+version = project.mod_version
+group = project.maven_group
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
-
-minecraft {
-    mappings channel: 'parchment', version: '1.18.2-2022.06.05-1.19'
-
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-            arg "-mixin.config=getittogetherdrops.mixins.json"
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                getittogetherdrops {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-            arg "-mixin.config=getittogetherdrops.mixins.json"
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                getittogetherdrops {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
+repositories {
+	maven { url "https://maven.shedaniel.me/" }
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.19-41.0.19"
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 }
 
-mixin {
-    add sourceSets.main, "getittogetherdrops.refmap.json"
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = "UTF-8"
+	it.options.release = 17
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = "sources"
+	from sourceSets.main.allSource
+}
+
+java {
+	withSourcesJar()
 }
 
 jar {
-    manifest {
-        attributes([
-                "Specification-Title": "Get It Together, Drops!",
-                "Specification-Vendor": "bl4ckscor3",
-                "Specification-Version": "${version}",
-                "Implementation-Title": "Get It Together, Drops!",
-                "Implementation-Version": "${version}",
-                "Implementation-Vendor": "bl4ckscor3",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "getittogetherdrops.mixins.json"
-        ])
-    }
+	from("LICENSE") {
+		rename { "${it}_${project.archivesBaseName}"}
+	}
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			artifact(remapJar) {
+				builtBy remapJar
+			}
+			artifact(sourcesJar) {
+				builtBy remapSourcesJar
+			}
+		}
+	}
+
+	repositories {}
 }

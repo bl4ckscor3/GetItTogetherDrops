@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "getittogetherdrops",
+  "version": "${version}",
+  "name": "Get It Together, Drops!",
+  "description": "Adds configuration options for defining how dropped items should combine.",
+  "authors": [
+    "bl4ckscor3"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/get-it-together-drops",
+    "issues": "https://github.com/bl4ckscor3/GetItTogetherDrops/issues",
+    "sources": "https://github.com/bl4ckscor3/GetItTogetherDrops/tree/1.19-fabric"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/getittogetherdrops/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "bl4ckscor3.mod.getittogetherdrops.GetItTogetherDrops"
+    ]
+  },
+  "mixins": [
+    "getittogetherdrops.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "~1.19",
+    "java": ">=17"
+  }
+}
