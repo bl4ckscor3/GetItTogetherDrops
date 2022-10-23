@@ -12,14 +12,14 @@ import net.minecraft.world.item.ItemStack;
 
 @Mixin(ItemEntity.class)
 public class ItemEntityMixin {
-	@Inject(method = "mergeWithNeighbours", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "mergeWithNeighbours", at = @At(value = "INVOKE_ASSIGN", id = "Lnet/minecraft/world/entity/item/ItemEntity;isMergable()Z"), cancellable = true)
 	private void mergeWithNeighbours(CallbackInfo info) {
 		ItemEntity me = (ItemEntity) (Object) this;
 		ItemStack item = me.getItem();
 
-		if (item.is(GetItTogetherDrops.IGNORED)) //fall back to vanilla behavior
+		if (item.is(GetItTogetherDrops.IGNORED)) //if part of tag: fall back to vanilla behavior
 			return;
-		else if (me.isMergable() && !item.is(GetItTogetherDrops.DO_NOT_COMBINE)) { //do not combine the item at all
+		else if (!item.is(GetItTogetherDrops.DO_NOT_COMBINE)) { //if part of tag: do not combine the item at all
 			double radius = GetItTogetherDropsConfig.radius;
 			boolean checkY = GetItTogetherDropsConfig.checkY;
 
