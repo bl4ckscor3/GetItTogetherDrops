@@ -14,6 +14,7 @@ import net.minecraftforge.network.NetworkConstants;
 public class GetItTogetherDrops {
 	public static final String MODID = "getittogetherdrops";
 	public static final TagKey<Item> IGNORED = ItemTags.create(new ResourceLocation(MODID, "ignored"));
+	public static final TagKey<Item> DO_NOT_COMBINE = ItemTags.create(new ResourceLocation(MODID, "do_not_combine"));
 
 	public GetItTogetherDrops() {
 		//make sure the mod being absent on the other network side does not cause the client to display the server as incompatible
