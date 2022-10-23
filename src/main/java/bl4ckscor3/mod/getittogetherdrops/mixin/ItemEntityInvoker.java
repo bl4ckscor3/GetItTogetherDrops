@@ -5,8 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(ItemEntity.class)
-public interface ItemEntityInvoker
-{
+public interface ItemEntityInvoker {
 	@Invoker("isMergable")
 	boolean callIsMergable();
 

@@ -8,26 +8,22 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
-public class GetItTogetherDrops implements ModInitializer
-{
+public class GetItTogetherDrops implements ModInitializer {
 	public static final String MODID = "getittogetherdrops";
 	public static final TagKey<Item> IGNORED = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MODID, "ignored"));
 	private static GetItTogetherDropsConfig config;
 
 	@Override
-	public void onInitialize()
-	{
+	public void onInitialize() {
 		AutoConfig.register(GetItTogetherDropsConfig.class, JanksonConfigSerializer::new);
 		config = AutoConfig.getConfigHolder(GetItTogetherDropsConfig.class).getConfig();
 	}
 
-	public static double radius()
-	{
+	public static double radius() {
 		return config.radius;
 	}
 
-	public static boolean checkY()
-	{
+	public static boolean checkY() {
 		return config.checkY;
 	}
 }
