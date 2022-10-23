@@ -2,6 +2,7 @@ package bl4ckscor3.mod.getittogetherdrops.mixin;
 
 import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDrops;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -12,13 +13,14 @@ public abstract class ItemEntityMixin {
 	@Inject(method = "mergeWithNeighbours", at = @At("HEAD"), cancellable = true)
 	private void mergeWithNeighbours(CallbackInfo info) {
 		ItemEntity me = (ItemEntity) (Object) this;
+		ItemStack item = me.getItem();
 
-		if (me.getItem().is(GetItTogetherDrops.IGNORED))
+		if (item.is(GetItTogetherDrops.IGNORED)) //fall back to vanilla behavior
 			return;
 
 		ItemEntityInvoker invokeMe = (ItemEntityInvoker) me;
 
-		if (invokeMe.callIsMergable()) {
+		if (invokeMe.callIsMergable() && !item.is(GetItTogetherDrops.DO_NOT_COMBINE)) { //do not combine the item at all
 			double radius = GetItTogetherDrops.radius();
 			boolean checkY = GetItTogetherDrops.checkY();
 

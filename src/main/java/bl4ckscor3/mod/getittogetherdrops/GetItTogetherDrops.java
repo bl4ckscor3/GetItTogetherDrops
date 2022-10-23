@@ -11,6 +11,7 @@ import net.minecraft.world.item.Item;
 public class GetItTogetherDrops implements ModInitializer {
 	public static final String MODID = "getittogetherdrops";
 	public static final TagKey<Item> IGNORED = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MODID, "ignored"));
+	public static final TagKey<Item> DO_NOT_COMBINE = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MODID, "do_not_combine"));
 	private static GetItTogetherDropsConfig config;
 
 	@Override
