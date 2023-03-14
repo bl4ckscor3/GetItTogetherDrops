@@ -1,12 +1,13 @@
 package bl4ckscor3.mod.getittogetherdrops.mixin;
 
-import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDrops;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import bl4ckscor3.mod.getittogetherdrops.GetItTogetherDrops;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 
 @Mixin(ItemEntity.class)
 public abstract class ItemEntityMixin {
@@ -27,7 +28,6 @@ public abstract class ItemEntityMixin {
 				if (me.isRemoved())
 					break;
 			}
-
 		}
 
 		info.cancel(); //"return;" in the original method
