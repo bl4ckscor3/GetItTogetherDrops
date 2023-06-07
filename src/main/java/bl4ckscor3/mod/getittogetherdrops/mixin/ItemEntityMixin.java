@@ -22,7 +22,7 @@ public abstract class ItemEntityMixin {
 			double radius = GetItTogetherDrops.radius();
 			boolean checkY = GetItTogetherDrops.checkY();
 
-			for (ItemEntity ei : me.level.getEntitiesOfClass(ItemEntity.class, me.getBoundingBox().inflate(radius, checkY ? radius : 0.0D, radius), e -> e != me && ((ItemEntityInvoker) e).callIsMergable())) {
+			for (ItemEntity ei : me.level().getEntitiesOfClass(ItemEntity.class, me.getBoundingBox().inflate(radius, checkY ? radius : 0.0D, radius), e -> e != me && ((ItemEntityInvoker) e).callIsMergable())) {
 				((ItemEntityInvoker) me).callTryToMerge(ei);
 
 				if (me.isRemoved())
