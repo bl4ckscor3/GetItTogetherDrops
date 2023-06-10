@@ -18,6 +18,9 @@
   "entrypoints": {
     "main": [
       "bl4ckscor3.mod.getittogetherdrops.GetItTogetherDrops"
+    ],
+    "modmenu": [
+      "bl4ckscor3.mod.getittogetherdrops.ModMenuIntegration"
     ]
   },
   "mixins": [
