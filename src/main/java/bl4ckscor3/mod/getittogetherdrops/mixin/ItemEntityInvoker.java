@@ -1,8 +1,9 @@
 package bl4ckscor3.mod.getittogetherdrops.mixin;
 
-import net.minecraft.world.entity.item.ItemEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
+
+import net.minecraft.world.entity.item.ItemEntity;
 
 @Mixin(ItemEntity.class)
 public interface ItemEntityInvoker {
