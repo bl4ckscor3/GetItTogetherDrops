@@ -4,11 +4,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.fml.IExtensionPoint.DisplayTest;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.network.NetworkConstants;
+import net.neoforged.fml.IExtensionPoint.DisplayTest;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.network.NetworkConstants;
 
 @Mod(GetItTogetherDrops.MODID)
 public class GetItTogetherDrops {

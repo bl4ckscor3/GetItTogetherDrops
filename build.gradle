@@ -1,72 +1,39 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-        maven {url='https://repo.spongepowered.org/maven'}
-        maven { url = 'https://maven.parchmentmc.org' }
-    }
-
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7.+'
-        classpath 'org.parchmentmc:librarian:1.+'
-    }
+plugins {
+	id 'java-library'
+	id 'eclipse'
+	id 'idea'
+	id 'net.neoforged.gradle.userdev' version '[7.0,7.1)'
+//	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
-
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'eclipse'
 
 version = "1.3"
 group = "bl4ckscor3.mod.getittogetherdrops"
-archivesBaseName = "getittogetherdrops-forge-1.19.2"
+
+base {
+	archivesName = 'getittogetherdrops-neoforge-1.20.2'
+}
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
-minecraft {
-    mappings channel: 'parchment', version: '2022.10.16-1.19.2'
+minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
 
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-            arg "-mixin.config=getittogetherdrops.mixins.json"
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                getittogetherdrops {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-            arg "-mixin.config=getittogetherdrops.mixins.json"
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                getittogetherdrops {
-                    source sourceSets.main
-                }
-            }
-        }
+runs {
+    configureEach {
+        workingDirectory project.file('run')
+        systemProperty 'forge.logging.console.level', 'debug'
+        modSource project.sourceSets.main
     }
+
+    client {}
+    server {}
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.19.2-43.1.47"
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+	implementation 'net.neoforged:neoforge:20.2.47-beta'
 }
 
-mixin {
-    add sourceSets.main, "getittogetherdrops.refmap.json"
-}
-
-jar {
+tasks.named('jar', Jar).configure {
     manifest {
         attributes([
                 "Specification-Title": "Get It Together, Drops!",
@@ -74,9 +41,11 @@ jar {
                 "Specification-Version": "${version}",
                 "Implementation-Title": "Get It Together, Drops!",
                 "Implementation-Version": "${version}",
-                "Implementation-Vendor": "bl4ckscor3",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "getittogetherdrops.mixins.json"
+                "Implementation-Vendor": "bl4ckscor3"
         ])
     }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }

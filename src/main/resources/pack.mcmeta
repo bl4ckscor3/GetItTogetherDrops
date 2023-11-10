@@ -1,7 +1,14 @@
 {
     "pack": {
-        "description": "Get It Together, Drops! resources & data",
-        "pack_format": 9,
-        "forge:data_pack_format": 10
+        "description": {
+            "text": "Get It Together, Drops! resources & data"
+        },
+        "neoforge": {
+            "versions": {
+                "client_resources": 18,
+                "server_data": 18
+            }
+        },
+        "pack_format": 18
     }
 }
