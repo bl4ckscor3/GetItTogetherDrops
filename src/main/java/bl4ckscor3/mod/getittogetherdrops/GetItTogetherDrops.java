@@ -8,7 +8,6 @@ import net.neoforged.fml.IExtensionPoint.DisplayTest;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.neoforge.network.NetworkConstants;
 
 @Mod(GetItTogetherDrops.MODID)
 public class GetItTogetherDrops {
@@ -18,7 +17,7 @@ public class GetItTogetherDrops {
 
 	public GetItTogetherDrops() {
 		//make sure the mod being absent on the other network side does not cause the client to display the server as incompatible
-		ModLoadingContext.get().registerExtensionPoint(DisplayTest.class, () -> new DisplayTest(() -> NetworkConstants.IGNORESERVERONLY, (a, b) -> true));
+		ModLoadingContext.get().registerExtensionPoint(DisplayTest.class, () -> new DisplayTest(() -> DisplayTest.IGNORESERVERONLY, (a, b) -> true));
 		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, GetItTogetherDropsConfig.CONFIG_SPEC);
 	}
 }

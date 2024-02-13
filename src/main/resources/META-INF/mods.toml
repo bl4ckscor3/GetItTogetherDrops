@@ -1,13 +1,13 @@
 modLoader="javafml"
 loaderVersion="[1,)"
-issueTrackerURL="http://github.com/bl4ckscor3/GetItTogetherDrops/issues"
-license="MIT License http://github.com/bl4ckscor3/GetItTogetherDrops/blob/1.20.2/LICENSE"
+issueTrackerURL="https://github.com/bl4ckscor3/GetItTogetherDrops/issues"
+license="MIT License https://github.com/bl4ckscor3/GetItTogetherDrops/blob/neoforge/1.20.4/LICENSE"
 
 [[mods]] 
 	modId="getittogetherdrops"
 	version="${file.jarVersion}"
 	displayName="Get It Together, Drops!"
-	displayURL="http://minecraft.curseforge.com/projects/get-it-together-drops"
+	displayURL="https://www.curseforge.com/minecraft/mc-mods/get-it-together-drops"
 	authors="bl4ckscor3"
 	description='''Adds configuration options for defining how dropped items should combine.'''
 
@@ -17,13 +17,13 @@ license="MIT License http://github.com/bl4ckscor3/GetItTogetherDrops/blob/1.20.2
 [[dependencies.getittogetherdrops]]
     modId="neoforge"
     mandatory=true
-    versionRange="[20.2,)"
+    versionRange="[20.4,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.getittogetherdrops]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.20.2,1.21)"
+    versionRange="[1.20.4,1.21)"
     ordering="NONE"
     side="BOTH"
