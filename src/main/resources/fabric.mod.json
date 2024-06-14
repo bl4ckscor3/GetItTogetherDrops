@@ -10,7 +10,7 @@
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/get-it-together-drops",
     "issues": "https://github.com/bl4ckscor3/GetItTogetherDrops/issues",
-    "sources": "https://github.com/bl4ckscor3/GetItTogetherDrops/tree/1.20-fabric"
+    "sources": "https://github.com/bl4ckscor3/GetItTogetherDrops/tree/fabric/1.21"
   },
   "license": "MIT",
   "icon": "assets/getittogetherdrops/icon.png",
@@ -27,7 +27,7 @@
     "getittogetherdrops.mixins.json"
   ],
   "depends": {
-    "minecraft": ">=1.20.5",
+    "minecraft": ">=1.21",
     "java": ">=21",
     "cloth-config": "*"
   }
