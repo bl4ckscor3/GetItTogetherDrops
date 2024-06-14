@@ -11,8 +11,8 @@ import net.neoforged.fml.config.ModConfig;
 @Mod(GetItTogetherDrops.MODID)
 public class GetItTogetherDrops {
 	public static final String MODID = "getittogetherdrops";
-	public static final TagKey<Item> IGNORED = ItemTags.create(new ResourceLocation(MODID, "ignored"));
-	public static final TagKey<Item> DO_NOT_COMBINE = ItemTags.create(new ResourceLocation(MODID, "do_not_combine"));
+	public static final TagKey<Item> IGNORED = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MODID, "ignored"));
+	public static final TagKey<Item> DO_NOT_COMBINE = ItemTags.create(ResourceLocation.fromNamespaceAndPath(MODID, "do_not_combine"));
 
 	public GetItTogetherDrops(ModContainer modContainer) {
 		modContainer.registerConfig(ModConfig.Type.SERVER, GetItTogetherDropsConfig.CONFIG_SPEC);
