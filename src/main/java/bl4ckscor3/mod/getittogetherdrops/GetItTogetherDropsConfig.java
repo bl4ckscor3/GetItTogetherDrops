@@ -33,7 +33,7 @@ public class GetItTogetherDropsConfig {
 
 	@SubscribeEvent
 	public static void onModConfig(ModConfigEvent event) {
-		if (event.getConfig().getSpec() == GetItTogetherDropsConfig.CONFIG_SPEC) {
+		if (event.getConfig().getSpec() == CONFIG_SPEC && CONFIG_SPEC.isLoaded()) {
 			radius = CONFIG.radiusConfigValue.get();
 			checkY = CONFIG.checkYConfigValue.get();
 		}
