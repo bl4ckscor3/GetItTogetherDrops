@@ -9,7 +9,7 @@ version = "1.3.2"
 group = "bl4ckscor3.mod.getittogetherdrops"
 
 base {
-	archivesName = 'getittogetherdrops-neoforge-1.21'
+	archivesName = 'getittogetherdrops-neoforge-1.21.5'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -29,7 +29,7 @@ runs {
 }
 
 dependencies {
-	implementation 'net.neoforged:neoforge:21.0.143'
+	implementation 'net.neoforged:neoforge:21.5.22-beta'
 }
 
 tasks.named('jar', Jar).configure {
