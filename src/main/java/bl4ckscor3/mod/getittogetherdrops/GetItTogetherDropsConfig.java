@@ -4,13 +4,12 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.EventBusSubscriber.Bus;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 import net.neoforged.neoforge.common.ModConfigSpec.DoubleValue;
 
-@EventBusSubscriber(modid = GetItTogetherDrops.MODID, bus = Bus.MOD)
+@EventBusSubscriber(modid = GetItTogetherDrops.MODID)
 public class GetItTogetherDropsConfig {
 	public static final ModConfigSpec CONFIG_SPEC;
 	public static final GetItTogetherDropsConfig CONFIG;

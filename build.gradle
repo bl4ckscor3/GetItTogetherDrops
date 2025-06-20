@@ -5,18 +5,18 @@ plugins {
 	id 'net.neoforged.moddev' version '2.0.82'
 }
 
-version = "1.3.2"
+version = "1.3.3"
 group = "bl4ckscor3.mod.getittogetherdrops"
 
 base {
-	archivesName = 'getittogetherdrops-neoforge-1.21.5'
+	archivesName = 'getittogetherdrops-neoforge-1.21.6'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
 neoForge {
-	version = "21.5.62-beta"
+	version = "21.6.6-beta"
 	validateAccessTransformers = true
 
 	runs {
