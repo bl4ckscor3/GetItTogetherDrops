@@ -26,8 +26,12 @@ public class GetItTogetherDropsConfig {
 	}
 
 	public GetItTogetherDropsConfig(ModConfigSpec.Builder builder) {
-		radiusConfigValue = builder.comment("The radius (in blocks) that dropped items should check around them for other dropped items to combine with. (\"0.5\" is vanilla behavior)").defineInRange("radius", 2.0D, 0.5D, 500.0D);
-		checkYConfigValue = builder.comment("Set to true if you want dropped items to also check above and below them, set to false if not (\"false\" is vanilla behavior)").define("checkY", true);
+		radiusConfigValue = builder
+			.comment("The radius (in blocks) that dropped items should check around them for other dropped items to combine with (\"0.5\" is vanilla behavior).")
+			.defineInRange("radius", 2.0D, 0.5D, 500.0D);
+		checkYConfigValue = builder
+			.comment("Set to true if you want dropped items to also check above and below them, set to false if not (\"false\" is vanilla behavior).")
+			.define("checkY", true);
 	}
 
 	@SubscribeEvent

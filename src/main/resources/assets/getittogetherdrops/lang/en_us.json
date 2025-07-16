@@ -1,0 +1,6 @@
+{
+	"getittogetherdrops.configuration.checkY": "Check Y",
+	"getittogetherdrops.configuration.checkY.tooltip": "Set to true if you want dropped items to also check above and below them, set to false if not (\"false\" is vanilla behavior).",
+	"getittogetherdrops.configuration.radius": "Radius",
+	"getittogetherdrops.configuration.radius.tooltip": "The radius (in blocks) that dropped items should check around them for other dropped items to combine with (\"0.5\" is vanilla behavior)."
+}
