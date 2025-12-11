@@ -4,14 +4,14 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class GetItTogetherDrops implements ModInitializer {
 	public static final String MODID = "getittogetherdrops";
-	public static final TagKey<Item> IGNORED = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, "ignored"));
-	public static final TagKey<Item> DO_NOT_COMBINE = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(MODID, "do_not_combine"));
+	public static final TagKey<Item> IGNORED = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MODID, "ignored"));
+	public static final TagKey<Item> DO_NOT_COMBINE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MODID, "do_not_combine"));
 	private static GetItTogetherDropsConfig config;
 
 	@Override
