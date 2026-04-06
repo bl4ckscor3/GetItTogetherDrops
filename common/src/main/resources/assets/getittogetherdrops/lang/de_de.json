@@ -1,0 +1,8 @@
+{
+	"getittogetherdrops.configuration.checkY": "Y überprüfen",
+	"getittogetherdrops.configuration.checkY.tooltip": "Aktiviere dies, wenn gedroppte Items auch über und unter sich nach Items zum Verbinden suchen sollen (Vanilla hat dies deaktiviert).",
+	"getittogetherdrops.configuration.radius": "Radius",
+	"getittogetherdrops.configuration.radius.tooltip": "Der Radius (in Blöcken), in dem gedroppte Items um sich herum nach Items zum Verbinden suchen sollen (\"0.5\" ist der Vanilla-Wert).",
+	"tag.item.getittogetherdrops.do_not_combine": "Drops vereinigen sich nicht",
+	"tag.item.getittogetherdrops.ignore": "Drops vereinigen sich normal"
+}

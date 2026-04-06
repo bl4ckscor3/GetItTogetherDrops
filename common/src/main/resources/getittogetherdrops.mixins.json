@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "bl4ckscor3.mod.${mod_id}.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "ItemEntityInvoker",
+    "ItemEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

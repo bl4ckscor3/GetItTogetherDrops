@@ -1,13 +1,14 @@
-/.gradle
-/.settings
-/bin
-/build
-/logs
-/run
+# Gradle
+.gradle
+build
+libs
+runs
+
+# IntelliJ
+.idea
+out
+
+# Eclipse
+.settings
 .classpath
 .project
-*.launch
-/.apt_generated/
-/.apt_generated_tests/
-
-.idea/

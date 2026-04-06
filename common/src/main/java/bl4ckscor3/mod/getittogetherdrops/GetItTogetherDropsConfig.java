@@ -2,14 +2,11 @@ package bl4ckscor3.mod.getittogetherdrops;
 
 import org.apache.commons.lang3.tuple.Pair;
 
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.config.ModConfigEvent;
+import net.neoforged.fml.config.IConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 import net.neoforged.neoforge.common.ModConfigSpec.DoubleValue;
 
-@EventBusSubscriber(modid = GetItTogetherDrops.MODID)
 public class GetItTogetherDropsConfig {
 	public static final ModConfigSpec CONFIG_SPEC;
 	public static final GetItTogetherDropsConfig CONFIG;
@@ -34,9 +31,8 @@ public class GetItTogetherDropsConfig {
 			.define("checkY", true);
 	}
 
-	@SubscribeEvent
-	public static void onModConfig(ModConfigEvent event) {
-		if (event.getConfig().getSpec() == CONFIG_SPEC && CONFIG_SPEC.isLoaded()) {
+	public static void onConfigChange(IConfigSpec spec) {
+		if (spec == CONFIG_SPEC && CONFIG_SPEC.isLoaded()) {
 			radius = CONFIG.radiusConfigValue.get();
 			checkY = CONFIG.checkYConfigValue.get();
 		}

@@ -7,8 +7,8 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 @Mod(value = GetItTogetherDrops.MODID, dist = Dist.CLIENT)
-public class GetItTogetherDropsClient {
-	public GetItTogetherDropsClient(ModContainer modContainer) {
+public class NeoClientEntrypoint {
+	public NeoClientEntrypoint(ModContainer modContainer) {
 		modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
 	}
 }
