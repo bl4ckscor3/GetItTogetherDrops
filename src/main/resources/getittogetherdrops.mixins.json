@@ -4,8 +4,6 @@
   "compatibilityLevel": "JAVA_21",
   "refmap": "getittogetherdrops.refmap.json",
   "mixins": [
-  ],
-  "mixins": [
     "ItemEntityMixin"
   ],
   "injectors": {
