@@ -11,7 +11,7 @@ import net.neoforged.fml.event.config.ModConfigEvent;
 @EventBusSubscriber
 public class NeoEntrypoint {
 	public NeoEntrypoint(ModContainer modContainer) {
-		modContainer.registerConfig(ModConfig.Type.SERVER, GetItTogetherDropsConfig.CONFIG_SPEC);
+		modContainer.registerConfig(ModConfig.Type.SYNCED, GetItTogetherDropsConfig.CONFIG_SPEC);
 	}
 
 	@SubscribeEvent

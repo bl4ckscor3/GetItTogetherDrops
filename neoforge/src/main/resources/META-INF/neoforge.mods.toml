@@ -7,7 +7,7 @@ issueTrackerURL="${source_link}/issues"
     displayName="${mod_name}"
     description='''${description}'''
     displayURL="${cf_link}"
-    logoFile="assets/${mod_id}/icon.png"
+    iconFile="assets/${mod_id}/icon.png"
     authors="${mod_author}"
 
 [[mixins]]
@@ -16,7 +16,7 @@ issueTrackerURL="${source_link}/issues"
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"
-    versionRange="[${neoforge_version},)"
+    versionRange="[${neoforge_min_version},)"
     ordering="NONE"
     side="BOTH"
 
